@@ -1,0 +1,23 @@
+<h2 style="text-align: center;padding: 40px;">{{ 'Product' | translate }}</h2>
+<table class="table">
+    <thead class="thead-light" style="text-align: center;">
+        <tr>
+            <th scope="col">{{ 'Id' | translate }}</th>
+            <th scope="col">{{ 'Name' | translate }}</th>
+            <th scope="col">{{ 'image' | translate }}</th>
+            <th scope="col">{{ 'price' | translate }}</th>
+            <th>{{ 'Detail' | translate }}</th>
+        </tr>
+    </thead>
+    <tbody style="text-align: center;">
+        <tr *ngFor="let product of products">
+            <td>{{product.id}}</td>
+            <td>{{product.name}}</td>
+            <td><img height="50px" width="50px" src="{{product.image}}" alt=""></td>
+            <td>{{product.price}} VNĐ</td>
+            <td>
+                <button routerLink="/product/detail/{{product.id}}" class="btn btn-primary">{{ 'View' | translate }}</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

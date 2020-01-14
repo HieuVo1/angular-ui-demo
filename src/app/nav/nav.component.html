@@ -1,0 +1,32 @@
+<nav class="navbar navbar-expand-lg " style="background-color: #ff440726!important;">
+    <a class="navbar-brand" routerLink="/home"><img src="../../assets/logo/lg.png" height="50px" width="100px" alt=""></a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navb">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navb">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link " routerLink="/home">{{ 'Home' | translate }}</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/product">{{ 'Product' | translate }}</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link " routerLink="/contact">{{ 'Contact' | translate }}</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link " routerLink="/login">{{ 'Login' | translate }}</a>
+            </li>
+
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="text" placeholder="{{ 'Search' | translate }}">
+            <button class="btn btn-success my-2 my-sm-0" type="button">{{ 'Search' | translate }}</button>
+        </form>
+        <div class="languale">
+            <button class="btn btn-primary ml-4" (click)="useLanguage('en')">En</button>
+            <button class="btn btn-primary ml-2" (click)="useLanguage('vi')">Vi</button>
+        </div>
+    </div>
+</nav>
