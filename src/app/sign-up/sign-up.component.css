@@ -1,126 +1,95 @@
-/* sign in FORM */
-
-#logreg-forms {
-    width: 412px;
-    margin: 10vh auto;
-    background-color: #f3f3f3;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
+* {
+    font-family: 'Josefin Sans';
 }
 
-#logreg-forms form {
-    width: 100%;
-    max-width: 410px;
-    padding: 15px;
-    margin: auto;
+.required {
+    font-size: 140%;
+    color: #ed3737;
 }
 
-#logreg-forms .form-control {
-    position: relative;
-    box-sizing: border-box;
-    height: auto;
-    padding: 10px;
-    font-size: 16px;
-}
-
-#logreg-forms .form-control:focus {
-    z-index: 2;
-}
-
-#logreg-forms .form-signin input[type="email"] {
-    margin-bottom: -1px;
-    border-bottom-right-radius: 0;
-    border-bottom-left-radius: 0;
-}
-
-#logreg-forms .form-signin input[type="password"] {
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-}
-
-#logreg-forms .social-login {
-    width: 390px;
-    margin: 0 auto;
-    margin-bottom: 14px;
-}
-
-#logreg-forms .social-btn {
-    font-weight: 100;
-    color: white;
-    width: 190px;
-    font-size: 0.9rem;
-}
-
-#logreg-forms a {
+.input-text {
     display: block;
-    padding-top: 10px;
-    color: lightseagreen;
+    width: 100%;
+    height: 51px;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 2px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 
-#logreg-form .lines {
-    width: 200px;
-    border: 1px solid red;
+.col-lg-5 {
+    -ms-flex: 0 0 41.666667%;
+    flex: 0 0 41.666667%;
+    max-width: 41.666667%
 }
 
-#logreg-forms button[type="submit"] {
-    margin-top: 10px;
+.form-divider {
+    position: relative;
+    width: 100%;
+    margin: 14px 0;
+    text-align: center;
 }
 
-#logreg-forms .facebook-btn {
-    background-color: #3C589C;
+.w100 {
+    width: 100% !important;
+    max-width: 100% !important;
 }
 
-#logreg-forms .google-btn {
-    background-color: #DF4B3B;
+.btn.btn-primary {
+    border-width: 2px;
+    color: #fff !important;
+    border-color: #000 !important;
+    background-color: #000 !important;
 }
 
-#logreg-forms .form-reset,
-#logreg-forms .form-signup {
-    display: none;
+.btn {
+    display: inline-block;
+    font-weight: 400;
+    height: 51px;
+    color: #212529;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid #00000024;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 
-#logreg-forms .form-signup .social-btn {
-    width: 210px;
+.title {
+    font-size: 56px;
+    font-weight: 600;
 }
 
-#logreg-forms .form-signup input {
-    margin-bottom: 2px;
+.link-title {
+    text-align: center;
+    padding-left: 0px;
 }
 
-.form-signup .social-login {
-    width: 210px !important;
-    margin: 0 auto;
+.link-title>li {
+    display: inline;
 }
 
+.link-title>li>a {
+    color: black;
+    text-decoration: none;
+    background-color: transparent;
+}
 
-/* Mobile */
-
-@media screen and (max-width:500px) {
-    #logreg-forms {
-        width: 300px;
-    }
-    #logreg-forms .social-login {
-        width: 200px;
-        margin: 0 auto;
-        margin-bottom: 10px;
-    }
-    #logreg-forms .social-btn {
-        font-size: 1.3rem;
-        font-weight: 100;
-        color: white;
-        width: 200px;
-        height: 56px;
-    }
-    #logreg-forms .social-btn:nth-child(1) {
-        margin-bottom: 5px;
-    }
-    #logreg-forms .social-btn span {
-        display: none;
-    }
-    #logreg-forms .facebook-btn:after {
-        content: 'Facebook';
-    }
-    #logreg-forms .google-btn:after {
-        content: 'Google+';
-    }
+.page-content {
+    padding-top: 3.75rem;
+    padding-bottom: 6.25rem;
 }

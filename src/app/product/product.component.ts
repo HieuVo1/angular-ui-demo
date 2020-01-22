@@ -1,21 +1,25 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../product.service'
-import {PRODUCTS} from '../mock-product';
+import {Router, ActivatedRoute} from '@angular/router';
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.css']
 })
 export class ProductComponent implements OnInit {
-products = [] ;
+products :any[] ;
+pages=[1,2,3,4,5];
   constructor(
     private productService: ProductService,
+    private route:Router,
+    private activatedRoute: ActivatedRoute
   ) { }
 
   ngOnInit() {
-    this.getProducts();
+    this.activatedRoute.queryParams.subscribe(params => console.log(params['page']));
+    this.getList();
   }
-  getProducts(): void {
-   this.productService.getProducts().subscribe(products => this.products = products);
+  getList() {
+   this.productService.getItems().subscribe(products => this.products = products);
   }
 }

@@ -1,32 +1,60 @@
-<nav class="navbar navbar-expand-lg " style="background-color: #ff440726!important;">
-    <a class="navbar-brand" routerLink="/home"><img src="../../assets/logo/lg.png" height="50px" width="100px" alt=""></a>
-    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navb">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand col-lg-1 col-sm-6 " routerLink="/home">
+        <img class="logo" height="65px " width="50px " src="https://cdn.shopify.com/s/files/1/0538/1029/files/barberry-logo.png?6375 " alt=" ">
+    </a>
+    <button class="navbar-toggler col-sm-6" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+    <div class="col-lg-11 collapse navbar-collapse row" id="navbarNavDropdown">
+        <ul class="navbar-nav  col-lg-6 pr-4 pl-4">
+            <li class="nav-item pr-3 pl-3  ">
+                <a class="nav-link   " routerLink="/home">{{ 'Home' | translate }}</a>
+            </li>
+            <li class="nav-item pr-3 pl-3">
+                <a class="nav-link " routerLink="/collections/product">{{ 'Product' | translate }}</a>
+                <!-- <div class="dropdown ">
+                    <button class="search-button dropdown-toggle colorStyle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        {{ 'Product' | translate }}
+                  </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item colorStyle">LapTop</a>
+                        <a class="dropdown-item colorStyle ">Tai nghe</a>
+                    </div>
+                </div> -->
+            </li>
 
-    <div class="collapse navbar-collapse" id="navb">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link " routerLink="/home">{{ 'Home' | translate }}</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" routerLink="/product">{{ 'Product' | translate }}</a>
-            </li>
-            <li class="nav-item">
+            <li class="nav-item pr-3 pl-3 ">
                 <a class="nav-link " routerLink="/contact">{{ 'Contact' | translate }}</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item pr-3 pl-3 ">
                 <a class="nav-link " routerLink="/login">{{ 'Login' | translate }}</a>
             </li>
-
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="text" placeholder="{{ 'Search' | translate }}">
-            <button class="btn btn-success my-2 my-sm-0" type="button">{{ 'Search' | translate }}</button>
-        </form>
-        <div class="languale">
-            <button class="btn btn-primary ml-4" (click)="useLanguage('en')">En</button>
-            <button class="btn btn-primary ml-2" (click)="useLanguage('vi')">Vi</button>
-        </div>
+
+        <ul class="navbar-nav col-lg-6 pr-4 pl-4 ">
+            <li class="nav-item pr-3 pl-3 ">
+                <button class="search-button "><i class="fa fa-search "></i> </button>
+            </li>
+            <li class="nav-item pr-3 pl-3 ">
+                <button class="heart-button "><i class="fa fa-heart "></i></button>
+            </li>
+            <li class="nav-item pr-3 pl-3 ">
+                <a class="nav-link " routerLink="/login">{{ 'My account' | translate }}</a>
+            </li>
+            <li class="nav-item pr-3 pl-3 ">
+                <div class="dropdown ">
+                    <button class="search-button dropdown-toggle colorStyle " type="button " id="dropdownMenuButton " data-toggle="dropdown " aria-haspopup="true " aria-expanded="false ">
+                        Translate
+                  </button>
+                    <div class="dropdown-menu " aria-labelledby="dropdownMenuButton ">
+                        <button class="dropdown-item colorStyle " (click)="useLanguage( 'en') ">English</button>
+                        <button class="dropdown-item colorStyle " (click)="useLanguage( 'vi') ">Vietnam</button>
+                    </div>
+                </div>
+            </li>
+            <li class="nav-item pr-3 pl-3 ">
+
+            </li>
+        </ul>
     </div>
 </nav>

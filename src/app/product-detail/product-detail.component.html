@@ -1,4 +1,4 @@
-<body>
+<!-- <body>
     <div *ngIf="product">
         <div class="container">
 
@@ -22,20 +22,13 @@
                                     <span class="fa fa-star"></span>
                                 </div>
                             </div>
-                            <h4 class="price">current price: <span>{{product.price}}VNĐ</span></h4>
-                            <!-- <h5 class="sizes">sizes:
-                                <span class="size" data-toggle="tooltip" title="small">s</span>
-                                <span class="size" data-toggle="tooltip" title="medium">m</span>
-                                <span class="size" data-toggle="tooltip" title="large">l</span>
-                                <span class="size" data-toggle="tooltip" title="xtra large">xl</span>
-                            </h5> -->
-                            <h5 class="colors">colors:
-                                <span class="color orange not-available" data-toggle="tooltip" title="Not In store"></span>
-                                <span class="color green"></span>
-                                <span class="color blue"></span>
-                                <br>
-                                <br>
-                                <button class="add-to-cart btn btn-default" type="button">add to cart</button>
+                            <h4 class="price">current price: <span>{{product.price}}VNĐ</span></h4 <h5 class="colors">colors:
+                            <span class="color orange not-available" data-toggle="tooltip" title="Not In store"></span>
+                            <span class="color green"></span>
+                            <span class="color blue"></span>
+                            <br>
+                            <br>
+                            <button class="add-to-cart btn btn-default" type="button">add to cart</button>
                             </h5>
                         </div>
                     </div>
@@ -43,4 +36,136 @@
             </div>
         </div>
     </div>
-</body>
+</body> -->
+<div class="page-content">
+    <div class="container">
+        <div *ngIf="product">
+            <div class="row">
+                <div class="col-lg-6 col-sm-12">
+                    <div class="product-images">
+                        <ngx-image-zoom thumbImage="{{product.image1}}" magnification=1.5></ngx-image-zoom>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-sm-12">
+                    <div class="title-text mt-5">
+                        <ul class="link-title">
+                            <li>
+                                <a routerLink="/home" href="">
+                                    <span>Home  </span>
+                                    <span>  /  </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a routerLink="/collections/product" href="">
+                                    <span>Colections</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <p class=" title mt-3 mb-4">{{product.name}}</p>
+                    </div>
+                    <div class="product-prices">
+                        <p>{{product.price | currency}}</p>
+                    </div>
+                    <div class="product-description">
+                        <p>Tumbler is a modern variant of the classic alarm clock from Danish design duo, Norm Architects. With its rounded bottom and no-tilt design Norm’s Tumbler alarm clock is decorative, practical, and fun to interact with. This is a
+                            Demo Online Store. No orders shall be fulfilled. Purchase this product on menudesignshop.com.</p>
+                    </div>
+                    <div class="row mt-4 mb-4">
+                        <div class="col-lg-4 m-auto product-form__item--quantity">
+                            <button type="button"><i style='font-family: "Font Awesome 5 Free", "FontAwesome";' class="fas fa-minus"></i></button>
+                            <input type="text" name="quantity" value="1" min="1" class="quantity product-form__input" pattern="[0-9]*">
+                            <button type="button"><i style='font-family: "Font Awesome 5 Free", "FontAwesome";' class="far fa-plus "></i></button>
+
+                        </div>
+                        <div class="col-lg-8">
+                            <button type="submit " class="btn btn-primary black ">Add To Card</button>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="checkbox" id="agree">
+                        <label for="agree">I agree with the terms and conditions.</label>
+                    </div>
+                    <div class="form-group ">
+                        <button type="submit " class="btn btn-primary w100 ">BUY IT NOW</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="page-content">
+    <p class=" title mt-3 mb-4 text-center">Related products</p>
+    <div class="container">
+        <div class="row">
+            <div [routerLink]="['/collections/product/product-detail',10]" class="product-card mt-4 col-lg-3 col-sm-12">
+                <div class="product-image">
+                    <img class="image1" src="../../assets/2548/products/elephant-stool-01_1024x1024@2x254b.jpg" height="300px" width="100%" alt="">
+                    <img class="image2" src="../../assets/2548/products/elephant-stool-02_1024x1024@2x64d1.jpg" height=" 300px " width="100% " alt=" ">
+                </div>
+                <div class="text">
+                    <div class="product-name">
+                        <h2>Elephant Chair</h2>
+                    </div>
+                    <div class="product-price">
+                        <h6>$90</h6>
+                    </div>
+                </div>
+                <div class="add-to-card">
+                    <button class="btn-add">Add To Card</button>
+                </div>
+            </div>
+            <div [routerLink]="['/collections/product/product-detail',9]" class="product-card mt-4 col-lg-3 col-sm-12">
+                <div class="product-image">
+                    <img class="image1" src="../../assets/2548/products/portable-spkr-01_1024x1024@2x45a8.jpg" height="300px" width="100%" alt="">
+                    <img class="image2" src="../../assets/2548/products/portable-spkr-02_1024x1024@2xc855.jpg" height=" 300px " width="100% " alt=" ">
+                </div>
+                <div class="text">
+                    <div class="product-name">
+                        <h2>Bluetooth Speaker</h2>
+                    </div>
+                    <div class="product-price">
+                        <h6>$249</h6>
+                    </div>
+                </div>
+                <div class="add-to-card">
+                    <button class="btn-add">Add To Card</button>
+                </div>
+            </div>
+            <div [routerLink]="['/collections/product/product-detail',11]" class="product-card mt-4 col-lg-3 col-sm-12">
+                <div class="product-image">
+                    <img class="image1" src="../../assets/2548/products/beoplayh8i-03_1024x1024@2xb190.jpg" height="300px" width="100%" alt="">
+                    <img class="image2" src="../../assets/2548/products/beoplayh8i-02_1024x1024@2xd8a2.jpg" height=" 300px " width="100% " alt=" ">
+                </div>
+                <div class="text">
+                    <div class="product-name">
+                        <h2>Libero Headphones</h2>
+                    </div>
+                    <div class="product-price">
+                        <h6>$499</h6>
+                    </div>
+                </div>
+                <div class="add-to-card">
+                    <button class="btn-add">Add To Card</button>
+                </div>
+            </div>
+            <div [routerLink]="['/collections/product/product-detail',12]" class="product-card mt-4 col-lg-3 col-sm-12">
+                <div class="product-image">
+                    <img class="image1" src="../../assets/2548/products/tumbler-clock-01_1024x1024@2x0899.jpg" height="300px" width="100%" alt="">
+                    <img class="image2" src="../../assets/2548/products/tumbler-clock-04_1024x1024@2x0899.jpg" height=" 300px " width="100% " alt=" ">
+                </div>
+                <div class="text">
+                    <div class="product-name">
+                        <h2>Alarm Clock</h2>
+                    </div>
+                    <div class="product-price">
+                        <h6>$65</h6>
+                    </div>
+                </div>
+                <div class="add-to-card">
+                    <button class="btn-add">Add To Card</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

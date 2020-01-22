@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
+* {
+    font-family: 'Josefin Sans';
+}
+
+.input-text {
+    display: block;
+    width: 100%;
+    height: 51px;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 2px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.required {
+    font-size: 140%;
+    color: #ed3737;
+}
+
+.area-border {
+    border: 2px solid #ced4da;
+}
+
+.btn.btn-primary {
+    border-width: 2px;
+    color: #fff !important;
+    border-color: #000 !important;
+    background-color: #000 !important;
+}
+
+.btn {
+    display: inline-block;
+    font-weight: 400;
+    height: 51px;
+    color: #212529;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid #00000024;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.title {
+    font-size: 50px;
+    font-weight: 600;
+}
+
+.contact-content {
+    list-style: none;
+    padding: 34px 17px 10px;
+    margin-left: 14px;
+}
+
+.page-content {
+    padding-top: 3.75rem;
+    padding-bottom: 6.25rem;
+}

@@ -14,6 +14,10 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
+import { FooterComponent } from './footer/footer.component';
+import { NgxImageZoomModule } from 'ngx-image-zoom';
+import { SlickModule } from 'ngx-slick';
+import { NotFountComponent } from './not-fount/not-fount.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +27,9 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
     ContactComponent,
     NavComponent,
     SignUpComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    FooterComponent,
+    NotFountComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +42,9 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
           useFactory: HttpLoaderFactory,
           deps: [HttpClient]
       }
-  })
+  }),
+  NgxImageZoomModule.forRoot(),
+  SlickModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

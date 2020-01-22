@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,OnChanges } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
@@ -8,8 +8,9 @@ import { ProductService }  from '../product.service';
   templateUrl: './product-detail.component.html',
   styleUrls: ['./product-detail.component.css']
 })
-export class ProductDetailComponent implements OnInit {
+export class ProductDetailComponent implements OnInit,OnChanges {
   product;
+  id;
   constructor(
     private route: ActivatedRoute,
     private productService: ProductService,
@@ -19,13 +20,18 @@ export class ProductDetailComponent implements OnInit {
   ngOnInit() {
     this.getProduct();
   }
+  ngOnChanges(){
+    this.getProduct();
+  }
   getProduct(): void {
-    const id = +this.route.snapshot.paramMap.get('id');
-    this.product=this.productService.getProduct(id);
+    this.route.params.subscribe(params => this.id= params['id'])
+    console.log(this.id);
+   this.productService.getSignle(this.id).subscribe(pro=>this.product=pro);
   }
 
   goBack(): void {
     this.location.back();
   }
+  
 
 }

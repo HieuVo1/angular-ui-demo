@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
+* {
+    font-family: 'Josefin Sans';
+}
+
+.page-content {
+    padding-top: 3.75rem;
+    padding-bottom: 6.25rem;
+}
+
+.page-title {
+    font-size: 60px;
+    font-weight: 600;
+}
+
+.error-404-description {
+    font-size: 23px;
+}
+
+.error-404-button {
+    background: #ffffff6b;
+    border: 1px solid black;
+    height: 47px;
+    width: 26%;
+}

@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
+.nav-link {
+    font-size: 20px;
+    font-family: 'Josefin Sans';
+    color: rgba(0, 0, 0, 0.82);
+    letter-spacing: 1px;
+}
+
+.logo {
+    margin: 0px 20px;
+}
+
+.search-button,
+.heart-button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.fa-search,
+.fa-heart {
+    font-size: 15px;
+    padding-top: 10px;
+}
+
+.dropdown {
+    padding-top: 5px;
+    font-size: 20px;
+}
+
+.colorStyle {
+    color: rgba(0, 0, 0, .5);
+}
+
+.dropdown>.dropdown-menu {
+    top: 200%;
+    transition: 0.2s all ease-in-out;
+}
+
+.dropdown:hover>.dropdown-menu {
+    display: block;
+    top: 100%;
+}
+
+.dropdown>.dropdown-toggle:active {
+    pointer-events: none;
+}
+
+.dropdown-item {
+    text-align: center;
+}
+
+.dropdown-menu {
+    min-width: 6rem;
+}

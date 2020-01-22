@@ -1,25 +1,55 @@
-<body>
-    <div id="logreg-forms">
+<div class="page-content">
+    <div class="container ">
+        <div class="col-lg-5 col-sm-12 form-login m-auto">
+            <form class="form-signin">
+                <div class="title-text mt-5">
+                    <ul class="link-title">
+                        <li>
+                            <a routerLink="/home">
+                                <span>Home  </span>
+                                <span>/  </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a routerLink="/sign-up">
+                                <span>Create Account</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <p class="text-center title mt-3 mb-4">Register</p>
+                </div>
+                <div class="form-group ">
+                    <label for="customer_login-first-name">First name</label>
+                    <input class="form-control input-text" id="customer_login-first-name" type="text" name="first-name" required="required" autofocus="">
+                </div>
+                <div class="form-group ">
+                    <label for="customer_login-last-name">Last name</label>
+                    <input class="form-control input-text" id="customer_login-last-name" type="text" name="last-name" required="required" autofocus="">
+                </div>
+                <div class="form-group ">
+                    <label for="customer_login-email">Email address<span class="required">*</span></label>
+                    <input class="form-control input-text" id="customer_login-email" type="email" name="email" required="required" autofocus="">
+                </div>
+                <div class="form-group ">
+                    <label for="customer_login-password">Password<span class="required">*</span></label>
+                    <input type="password" class="form-control input-text" id="customer_login-password" type="password" name="password" required="required" autofocus="">
+                </div>
+                <div class="form-group ">
+                    <a id="RecoverPassword">Forgot your password?</a>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary w100">Register</button>
+                </div>
+                <div class="form-divider">
+                    <span>OR</span>
+                </div>
+                <div class="form-group">
+                    <!-- <a href="/account/register" class="btn w100">Create an Account</a> -->
+                    <button type="button" routerLink="/login" class="btn  w100">LOG IN</button>
+                </div>
 
-        <form action="/signup/" class="form-signup" style="display: block;">
-            <div class="social-login">
-                <button class="btn facebook-btn social-btn" type="button"><span><i class="fab fa-facebook-f"></i> Sign up with Facebook</span> </button>
-            </div>
-            <div class="social-login">
-                <button class="btn google-btn social-btn" type="button"><span><i class="fab fa-google-plus-g"></i> Sign up with Google+</span> </button>
-            </div>
+            </form>
 
-            <p style="text-align:center">{{ 'OR' | translate }}</p>
-
-            <input type="text" id="user-name" class="form-control" placeholder="Full name" required="" autofocus="">
-            <input type="email" id="user-email" class="form-control" placeholder="Email address" required autofocus="">
-            <input type="password" id="user-pass" class="form-control" placeholder="Password" required autofocus="">
-            <input type="password" id="user-repeatpass" class="form-control" placeholder="Repeat Password" required autofocus="">
-
-            <button class="btn btn-primary btn-block" type="submit"><i class="fas fa-user-plus"></i> {{ 'Sign Up' | translate }}</button>
-            <a routerLink="/login" id="cancel_signup"><i class="fas fa-angle-left"></i> {{ 'Back' | translate }}</a>
-        </form>
-        <br>
-
+        </div>
     </div>
-</body>
+</div>

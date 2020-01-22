@@ -1,26 +1,47 @@
-<body>
-    <div id="logreg-forms">
-        <form class="form-signin">
-            <h1 class="h3 mb-3 font-weight-normal" style="text-align: center"> {{ 'Sign in' | translate }}</h1>
-            <div class="social-login">
-                <button class="btn facebook-btn social-btn" type="button"><span><i class="fab fa-facebook-f"></i> Sign in with Facebook</span> </button>
-                <button class="btn google-btn social-btn" type="button"><span><i class="fab fa-google-plus-g"></i> Sign in with Google+</span> </button>
-            </div>
-            <p style="text-align:center"> {{ 'OR' | translate }}</p>
-            <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="">
-            <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
+<div class="page-content">
+    <div class="container ">
+        <div class="col-lg-5 col-sm-12 form-login m-auto">
+            <form class="form-signin">
+                <div class="title-text mt-5">
+                    <ul class="link-title">
+                        <li>
+                            <a routerLink="/home">
+                                <span>Home  </span>
+                                <span>  /  </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a routerLink="/login">
+                                <span>Account</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <p class="text-center title mt-3 mb-4">Log in</p>
+                </div>
+                <div class="form-group ">
+                    <label for="customer_login-email">Email address<span class="required">*</span></label>
+                    <input class="form-control input-text" id="customer_login-email" type="email" name="email" required="required" autofocus="">
+                </div>
+                <div class="form-group ">
+                    <label for="customer_login-password">Password<span class="required">*</span></label>
+                    <input type="password" class="form-control input-text" id="customer_login-password" type="password" name="password" required="required" autofocus="">
+                </div>
+                <div class="form-group ">
+                    <a id="RecoverPassword">Forgot your password?</a>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary w100">LOG IN</button>
+                </div>
+                <div class="form-divider">
+                    <span>OR</span>
+                </div>
+                <div class="form-group">
+                    <!-- <a href="/account/register" class="btn w100">Create an Account</a> -->
+                    <button type="button" routerLink="/sign-up" class="btn  w100">Create an Account</button>
+                </div>
 
-            <button class="btn btn-success btn-block" type="submit"><i class="fas fa-sign-in-alt"></i> {{ 'Sign in' | translate }}</button>
-            <a href="#" id="forgot_pswd">{{ 'Forgot password?' | translate }}</a>
-            <hr>
-            <!-- <p>Don't have an account!</p>  -->
-            <button class="btn btn-primary btn-block" routerLink="/sign-up" type="button" id="btn-signup"><i class="fas fa-user-plus"></i> {{ 'Sign up New Account' | translate }}</button>
-        </form>
+            </form>
 
-        <form action="/reset/password/" class="form-reset">
-            <input type="email" id="resetEmail" class="form-control" placeholder="Email address" required="" autofocus="">
-            <button class="btn btn-primary btn-block" type="submit">{{ 'Reset Password' | translate }}</button>
-            <a href="#" id="cancel_reset"><i class="fas fa-angle-left"></i> {{ 'Back' | translate }}</a>
-        </form>
+        </div>
     </div>
-</body>
+</div>

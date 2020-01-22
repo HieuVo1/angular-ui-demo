@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
+public status=false;
   constructor() { }
 
   ngOnInit() {
   }
-
+  statusNext(){
+    console.log(this.status);
+  }
+  statusPrev(){
+    console.log(1);
+  }
 }

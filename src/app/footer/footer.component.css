@@ -1,0 +1,20 @@
+.list-unstyled a {
+    color: #000000;
+    font-size: 19px;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+.your-email {
+    height: 50px;
+    width: 300px;
+    border: 2px solid black;
+}
+
+.btn-sign-up {
+    height: 50px;
+    border: 2px solid black;
+    border-left: none;
+    background: black;
+    color: white;
+}

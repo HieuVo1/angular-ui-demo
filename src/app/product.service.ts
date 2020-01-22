@@ -1,49 +1,35 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { ajax } from 'rxjs/ajax';
-import { mergeAll,filter,toArray} from 'rxjs/operators';
-import {Product} from './product/product';
-import {PRODUCTS} from './mock-product';
-import { Observable, of } from 'rxjs';
+import { Observable} from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
    items;
-   result:Product;
+   private APIurl="http://5e1fba80e31c6e0014c5ff3c.mockapi.io/API/employee";
   constructor(
     private http: HttpClient,
   ) {
 
    }
-  getItems() {
-     return  this.http.get('/assets/product.json');
+  getItems():Observable<any[]> {
+    return this.http.get<any[]>(this.APIurl);
   }
-  getProducts(): Observable<Product[]> {
-    return of(PRODUCTS);
+  getSignle(id:number): Observable<any>{
+    return this.http.get<any>(this.APIurl+'/'+id);
   }
-  // getItem(id:number)
-  // {
-  //   console.log(id);
-  //   this.items=this.http.get('/assets/product.json');
-  //   // this.items.subscribe(val=> console.log( val));
-  //   // const x=this.items.pipe(filter(product => product.id==id));
-  // //  x.subscribe(val =>
-  // //     console.log(val)
-  // //   );
-  //   console.log(this.items);
-  //   this.items.pipe(mergeAll(),
-  //   filter(product => product.id==id),toArray()
-  //   ).subscribe(val => this.result===val);
-  //   console.log(this.result);
-  //   return this.result;
-    
-  // }
-  getProduct(id: number)  {
-    PRODUCTS.find(product => product.id === id);
-    this.result=PRODUCTS.find(product => product.id === id);
-    return this.result;
-    // return of(PRODUCTS.find(product => product.id === id));
+  Update(id:number,data:any): Observable<any>{
+    return this.http.put(this.APIurl+'/'+id,data);
+  }
+  Add(data:any): Observable<any>{
+    return this.http.post(this.APIurl,data);
+  }
+  Delete(id:number): Observable<any>{
+    return this.http.delete(this.APIurl+'/'+id);
+  }
+  Search(keyword:string): Observable<any>{
+    console.log(this.APIurl+'?search='+keyword);
+    return this.http.get(this.APIurl+'?search='+keyword);
   }
   
 }
