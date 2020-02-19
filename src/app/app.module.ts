@@ -18,6 +18,9 @@ import { FooterComponent } from './footer/footer.component';
 import { NgxImageZoomModule } from 'ngx-image-zoom';
 import { SlickModule } from 'ngx-slick';
 import { NotFountComponent } from './not-fount/not-fount.component';
+import {FormsModule} from '@angular/forms';
+import{AuthGuard} from './auth.guard';
+import { AccountComponent } from './account/account.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,10 +32,11 @@ import { NotFountComponent } from './not-fount/not-fount.component';
     SignUpComponent,
     ProductDetailComponent,
     FooterComponent,
-    NotFountComponent
+    NotFountComponent,
+    AccountComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     NgbModule,
     AppRoutingModule,
     HttpClientModule,
@@ -44,7 +48,8 @@ import { NotFountComponent } from './not-fount/not-fount.component';
       }
   }),
   NgxImageZoomModule.forRoot(),
-  SlickModule.forRoot()
+  SlickModule.forRoot(),
+  FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

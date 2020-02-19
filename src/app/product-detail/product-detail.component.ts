@@ -25,7 +25,6 @@ export class ProductDetailComponent implements OnInit,OnChanges {
   }
   getProduct(): void {
     this.route.params.subscribe(params => this.id= params['id'])
-    console.log(this.id);
    this.productService.getSignle(this.id).subscribe(pro=>this.product=pro);
   }
 

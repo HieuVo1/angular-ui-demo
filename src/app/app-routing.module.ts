@@ -8,14 +8,18 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { ContactComponent } from './contact/contact.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { NotFountComponent} from './not-fount/not-fount.component';
+import{AuthGuard} from './auth.guard';
+import { AccountComponent } from './account/account.component'
 const route =[
   {path : 'collections/product',component: ProductComponent},
   {path : 'home' ,component: HomeComponent},
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   {path: 'login',component: LoginComponent},
   {path: 'sign-up',component: SignUpComponent},
+  {path:'account',component:AccountComponent,canActivate:[AuthGuard]},
   {path: 'contact',component: ContactComponent},
   { path: 'collections/product/product-detail/:id', component: ProductDetailComponent },
+  { path: 'collections/:category', component: ProductComponent },
   {path: '**' ,component:NotFountComponent},
 ];
 @NgModule({

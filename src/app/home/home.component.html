@@ -76,158 +76,62 @@
 </div>
 <div class="recent-product mt-5 mb-5">
     <div class="big">
-        <h1>Recent Products</h1>
+        <h1>New Products</h1>
     </div>
     <div class="small">
-        <p>Recent posuere neque eu lectus ultrices</p>
+        <p>New posuere neque eu lectus ultrices</p>
     </div>
 </div>
 <div class="product mt-5 mb-5">
     <div class="row">
-        <div [routerLink]="['/collections/product/product-detail',1]" class=" product-card col-lg-3 col-sm-12">
+        <div *ngFor="let product of newProduct" class="product-card col-lg-3 col-sm-12" [routerLink]="['/collections/product/product-detail',product.id]">
             <div class="product-image">
-                <img class="image1" src="../../assets/img/product/product14.jpg" height="300px" width="100%" alt="">
-                <img class="image2" src="../../assets/img/product/product13.jpg" height="300px" width="100%" alt="">
+                <img class="image1" src="{{product.image}}" height="300px " width="100% " alt=" ">
+                <img class="image2 " src="{{product.image}}" height="300px" width="100%" alt="">
             </div>
             <div class="text">
-                <div class="product-name">
-                    <h2>Iphone X</h2>
-                </div>
+                <!-- <div class="product-name">
+                    <h2>{{product.name}}</h2>
+                </div> -->
                 <div class="product-price">
-                    <h6>120$-200$</h6>
+                    <h6>{{product.price}}$</h6>
                 </div>
             </div>
             <div class="add-to-card">
                 <button class="btn-add">Add To Card</button>
             </div>
         </div>
-        <div [routerLink]="['/collections/product/product-detail',2]" class="product-card col-lg-3 col-sm-12 ">
-
-            <div class="product-image ">
-                <img class="image1" src="../../assets/img/product/product21.jpg" height="300px " width="100% " alt=" ">
-                <img class="image2" src="../../assets/img/product/product21.jpg" height="300px " width="100% " alt=" ">
-            </div>
-            <div class="text">
-                <div class="product-name ">
-                    <h2>Apple Watch</h2>
-                </div>
-                <div class="product-price ">
-                    <h6>100$</h6>
-                </div>
-                <div class="add-to-card">
-                    <button class="btn-add">Add To Card</button>
-                </div>
-            </div>
-        </div>
-        <div [routerLink]="['/collections/product/product-detail',3]" class="product-card col-lg-3 col-sm-12 ">
-            <div class="product-image ">
-                <img class="image1" src="../../assets/img/product/product28.jpg " height=" 300px " width="100% " alt=" ">
-                <img class="image2" src="../../assets/img/product/product29.jpg " height=" 300px " width="100% " alt=" ">
-            </div>
-            <div class="text">
-                <div class="product-name ">
-                    <h2>Clock watcher</h2>
-                </div>
-                <div class="product-price ">
-                    <h6>120$-200$</h6>
-                </div>
-                <div class="add-to-card">
-                    <button class="btn-add">Add To Card</button>
-                </div>
-            </div>
-        </div>
-        <div [routerLink]="['/collections/product/product-detail',4]" class="product-card col-lg-3 col-sm-12 ">
-            <div class="product-image ">
-                <img class="image1" src="../../assets/img/product/product12.jpg " height="300px " width="100% " alt=" ">
-                <img class="image2" src="../../assets/img/product/product11.jpg " height="300px " width="100% " alt=" ">
-            </div>
-            <div class="text">
-                <div class="product-name ">
-                    <h2>Ipad</h2>
-                </div>
-                <div class="product-price ">
-                    <h6>300$</h6>
-                </div>
-                <div class="add-to-card">
-                    <button class="btn-add">Add To Card</button>
-                </div>
-            </div>
-        </div>
     </div>
-    <div class="row">
-        <div [routerLink]="['/collections/product/product-detail',5]" class="product-card col-lg-3 col-sm-12">
-            <div class="product-image">
-                <img class="image1" src="../../assets/img/product/product27.jpg" height="300px" width="100%" alt="">
-                <img class="image2" src="../../assets/img/product/product26.jpg" height="300px" width="100%" alt="">
-            </div>
-            <div class="text">
-                <div class="product-name">
-                    <h2>Chair</h2>
-                </div>
-                <div class="product-price">
-                    <h6>50$</h6>
-                </div>
-            </div>
-            <div class="add-to-card">
-                <button class="btn-add">Add To Card</button>
-            </div>
-        </div>
-        <div [routerLink]="['/collections/product/product-detail',6]" class="product-card col-lg-3 col-sm-12 ">
-
-            <div class="product-image ">
-                <img class="image1" src="../../assets/img/product/product15.jpg " height="300px " width="100% " alt=" ">
-                <img class="image2" src="../../assets/img/product/product16.jpg " height="300px " width="100% " alt=" ">
-            </div>
-            <div class="text">
-                <div class="product-name ">
-                    <h2>Speaker</h2>
-                </div>
-                <div class="product-price ">
-                    <h6>110$</h6>
-                </div>
-                <div class="add-to-card">
-                    <button class="btn-add">Add To Card</button>
-                </div>
-            </div>
-        </div>
-        <div [routerLink]="['/collections/product/product-detail',7]" class="product-card col-lg-3 col-sm-12 col-sm-12 ">
-            <div class="product-image ">
-                <img class="image1" src="../../assets/img/product/product25.jpg " height=" 300px " width="100% " alt=" ">
-                <img class="image2" src="../../assets/img/product/product24.jpg " height=" 300px " width="100% " alt=" ">
-            </div>
-            <div class="text">
-                <div class="product-name ">
-                    <h2>Clean</h2>
-                </div>
-                <div class="product-price ">
-                    <h6>120$-200$</h6>
-                </div>
-                <div class="add-to-card">
-                    <button class="btn-add">Add To Card</button>
-                </div>
-            </div>
-        </div>
-        <div [routerLink]="['/collections/product/product-detail',8]" class="product-card col-lg-3 col-sm-12 col-sm-12 ">
-            <div class="product-image ">
-                <img class="image1" src="../../assets/img/product/product4.jpg " height="300px " width="100% " alt=" ">
-                <img class="image2" src="../../assets/img/product/product3.jpg " height="300px " width="100% " alt=" ">
-            </div>
-            <div class="text">
-                <div class="product-name ">
-                    <h2>Head phone</h2>
-                </div>
-                <div class="product-price ">
-                    <h6>300$</h6>
-                </div>
-                <div class="add-to-card">
-                    <button class="btn-add">Add To Card</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
 </div>
-
+<div class="recent-product mt-5 mb-5">
+    <div class="big">
+        <h1>Hot Products</h1>
+    </div>
+    <div class="small">
+        <p>Hot posuere neque eu lectus ultrices</p>
+    </div>
+</div>
+<div class="product mt-5 mb-5">
+    <div class="row">
+        <div *ngFor="let product of goodProduct" class="product-card col-lg-3 col-sm-12" [routerLink]="['/collections/product/product-detail',product.id]">
+            <div class="product-image">
+                <img class="image1" src="{{product.image}}" height="300px " width="100% " alt=" ">
+                <img class="image2 " src="{{product.image}}" height="300px" width="100%" alt="">
+            </div>
+            <div class="text">
+                <!-- <div class="product-name">
+                    <h2>{{product.name}}</h2>
+                </div> -->
+                <div class="product-price">
+                    <h6>{{product.price}}$</h6>
+                </div>
+            </div>
+            <div class="add-to-card">
+                <button class="btn-add">Add To Card</button>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="container mt-5 mb-5 ">
     <div class="row ">
         <div class=" col-lg-6 m-auto all-product mt-5 mb-5 ">

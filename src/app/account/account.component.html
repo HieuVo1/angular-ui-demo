@@ -1,0 +1,70 @@
+<div class="title-text mt-5">
+    <ul class="link-title">
+        <li>
+            <a routerLink="/home">
+                <span>Home  </span>
+                <span>  /  </span>
+            </a>
+        </li>
+        <li>
+            <a routerLink="/login">
+                <span>Account</span>
+            </a>
+        </li>
+    </ul>
+    <p class="text-center title mt-3 mb-4">My Account</p>
+    <div class="logout text-center">
+        <a (click)="Logout()">Logout</a>
+    </div>
+</div>
+<div class="page-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-12 order-history">
+                <p class="tittles">Order History</p>
+                <div class="row">
+                    <div class="col-lg-9">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Order no</th>
+                                    <th>Order date</th>
+                                    <th>Bill-to name</th>
+                                    <th>Status</th>
+                                    <th>Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let order of orders">
+                                    <td>{{order.id}}</td>
+                                    <td>{{order.date|date}}</td>
+                                    <td>{{order.name}}</td>
+                                    <td>{{order.status}}</td>
+                                    <td>{{order.Total|currency}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+            <div class=" col-lg-4 col-12 Account-detail ">
+                <p class="tittles ">Account Details</p>
+                <ul class="contact-content text-center">
+                    <li>
+                        <h4>Name</h4>
+                        <p>{{info.name}}</p>
+                    </li>
+                    <li>
+                        <h4>Email</h4>
+                        <p>{{info.email}}</p>
+                    </li>
+                    <li>
+                        <h4>Telephone</h4>
+                        <p>+33 (0) 31-305-210<br>mo – fri: 09:00 – 17:00</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

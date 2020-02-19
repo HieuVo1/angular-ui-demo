@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import {AuthserviceService} from '../authservice.service'
 @Component({
   selector: 'app-sign-up',
   templateUrl: './sign-up.component.html',
@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignUpComponent implements OnInit {
 
-  constructor() { }
+  constructor(private authService:AuthserviceService) { }
 
   ngOnInit() {
   }
-
+  onSubmit(value)
+  {
+    this.authService.create(value);
+  }
 }

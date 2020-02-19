@@ -52,21 +52,37 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-4">
-                <div class="categories">
+                <div class="categories mb-5">
                     <h3>Categories</h3>
                     <ul class="widget__content ">
                         <li>
-                            <a href="/collections/lap-top">Lap top</a><span class="count">8</span>
+                            <a href="/collections/laptop">Lap top</a><span class="count">8</span>
                         </li>
                         <li>
                             <a href="/collections/headphone">Head phone</a><span class="count">4</span></li>
                         <li>
-                            <a href="/collections/sneaker">Sneaker</a><span class="count">3</span></li>
+                            <a href="/collections/screen">Screen</a><span class="count">3</span></li>
                         <li>
-                            <a href="/collections/watch">Watch</a><span class="count">2</span></li>
+                            <a href="/collections/keybroad">Keybroad</a><span class="count">2</span></li>
                     </ul>
                 </div>
-
+                <div class="filter-price mb-5">
+                    <h3>Filter by price</h3>
+                    <ul class="widget__content ">
+                        <li>
+                            <input [(ngModel)]="isChecked1" (change)="checkValue(isChecked1?true:false)" type="checkbox"> Below $100
+                        </li>
+                        <li>
+                            <input [(ngModel)]="isChecked2" (change)="checkValue(isChecked2?true:false)" type="checkbox"> $100 — $200
+                        </li>
+                        <li>
+                            <input [(ngModel)]="isChecked3" (change)="checkValue(isChecked3?true:false)" type="checkbox"> $200 — $300
+                        </li>
+                        <li>
+                            <input [(ngModel)]="isChecked4" (change)="checkValue(isChecked4?true:false)" type="checkbox"> Above $300
+                        </li>
+                    </ul>
+                </div>
                 <div class="product-recent">
                     <h3>Recent Products</h3>
                     <ul class="widget__content">
@@ -120,16 +136,16 @@
                 </div>
             </div>
             <div class="col-lg-8">
-                <div class="row">
-                    <div *ngFor="let product of products" [routerLink]="['product-detail',product.id]" class="product-card mt-4 col-lg-4 col-sm-12">
+                <div class="row" *ngIf="isckeckedall">
+                    <div *ngFor="let product of products" [routerLink]="['/collections/product/product-detail',product.id]" class="product-card mt-4 col-lg-4 col-sm-12">
                         <div class="product-image">
-                            <img class="image1" src="{{product.image1}}" height="300px" width="100%" alt="">
-                            <img class="image2" src="{{product.image2}}" height=" 300px " width="100% " alt=" ">
+                            <img class="image1" src="{{product.image}}" height="300px" width="100%" alt="">
+                            <img class="image2" src="{{product.image}}" height=" 300px " width="100% " alt=" ">
                         </div>
                         <div class="text">
-                            <div class="product-name">
+                            <!-- <div class="product-name">
                                 <h2>{{product.name}}</h2>
-                            </div>
+                            </div> -->
                             <div class="product-price">
                                 <h6>{{product.price|currency}}</h6>
                             </div>
@@ -138,59 +154,84 @@
                             <button class="btn-add">Add To Card</button>
                         </div>
                     </div>
-                    <!-- <div class="product-card mt-4 col-lg-4 col-sm-12">
-                        <div class="product-image">
-                            <img class="image1" src="../../assets/2548/products/portable-spkr-01_1024x1024@2x45a8.jpg" height="300px" width="100%" alt="">
-                            <img class="image2" src="../../assets/2548/products/portable-spkr-02_1024x1024@2xc855.jpg" height=" 300px " width="100% " alt=" ">
-                        </div>
-                        <div class="text">
-                            <div class="product-name">
-                                <h2>Iphone X</h2>
-                            </div>
-                            <div class="product-price">
-                                <h6>120$-200$</h6>
-                            </div>
-                        </div>
-                        <div class="add-to-card">
-                            <button class="btn-add">Add To Card</button>
-                        </div>
-                    </div>
-                    <div class="product-card mt-4 col-lg-4 col-sm-12">
-                        <div class="product-image">
-                            <img class="image1" src="../../assets/2548/products/beoplayh8i-03_1024x1024@2xb190.jpg" height="300px" width="100%" alt="">
-                            <img class="image2" src="../../assets/2548/products/beoplayh8i-02_1024x1024@2xd8a2.jpg" height=" 300px " width="100% " alt=" ">
-                        </div>
-                        <div class="text">
-                            <div class="product-name">
-                                <h2>Iphone X</h2>
-                            </div>
-                            <div class="product-price">
-                                <h6>120$-200$</h6>
-                            </div>
-                        </div>
-                        <div class="add-to-card">
-                            <button class="btn-add">Add To Card</button>
-                        </div>
-                    </div>
-                    <div class="product-card mt-4 col-lg-4 col-sm-12">
-                        <div class="product-image">
-                            <img class="image1" src="../../assets/2548/products/tumbler-clock-01_1024x1024@2x0899.jpg" height="300px" width="100%" alt="">
-                            <img class="image2" src="../../assets/2548/products/tumbler-clock-04_1024x1024@2x0899.jpg" height=" 300px " width="100% " alt=" ">
-                        </div>
-                        <div class="text">
-                            <div class="product-name">
-                                <h2>Iphone X</h2>
-                            </div>
-                            <div class="product-price">
-                                <h6>120$-200$</h6>
-                            </div>
-                        </div>
-                        <div class="add-to-card">
-                            <button class="btn-add">Add To Card</button>
-                        </div>
-                    </div> -->
                 </div>
-                <div class="row">
+                <div class="row" *ngIf="isChecked1">
+                    <div *ngFor="let product of products1" [routerLink]="['/collections/product/product-detail',product.id]" class="product-card mt-4 col-lg-4 col-sm-12">
+                        <div class="product-image">
+                            <img class="image1" src="{{product.image}}" height="300px" width="100%" alt="">
+                            <img class="image2" src="{{product.image}}" height=" 300px " width="100% " alt=" ">
+                        </div>
+                        <div class="text">
+                            <!-- <div class="product-name">
+                                <h2>{{product.name}}</h2>
+                            </div> -->
+                            <div class="product-price">
+                                <h6>{{product.price|currency}}</h6>
+                            </div>
+                        </div>
+                        <div class="add-to-card">
+                            <button class="btn-add">Add To Card</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" *ngIf="isChecked2">
+                    <div *ngFor="let product of products2" [routerLink]="['/collections/product/product-detail',product.id]" class="product-card mt-4 col-lg-4 col-sm-12">
+                        <div class="product-image">
+                            <img class="image1" src="{{product.image}}" height="300px" width="100%" alt="">
+                            <img class="image2" src="{{product.image}}" height=" 300px " width="100% " alt=" ">
+                        </div>
+                        <div class="text">
+                            <!-- <div class="product-name">
+                                <h2>{{product.name}}</h2>
+                            </div> -->
+                            <div class="product-price">
+                                <h6>{{product.price|currency}}</h6>
+                            </div>
+                        </div>
+                        <div class="add-to-card">
+                            <button class="btn-add">Add To Card</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" *ngIf="isChecked3">
+                    <div *ngFor="let product of products3" [routerLink]="['/collections/product/product-detail',product.id]" class="product-card mt-4 col-lg-4 col-sm-12">
+                        <div class="product-image">
+                            <img class="image1" src="{{product.image}}" height="300px" width="100%" alt="">
+                            <img class="image2" src="{{product.image}}" height=" 300px " width="100% " alt=" ">
+                        </div>
+                        <div class="text">
+                            <!-- <div class="product-name">
+                                <h2>{{product.name}}</h2>
+                            </div> -->
+                            <div class="product-price">
+                                <h6>{{product.price|currency}}</h6>
+                            </div>
+                        </div>
+                        <div class="add-to-card">
+                            <button class="btn-add">Add To Card</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" *ngIf="isChecked4">
+                    <div *ngFor="let product of products4" [routerLink]="['/collections/product/product-detail',product.id]" class="product-card mt-4 col-lg-4 col-sm-12">
+                        <div class="product-image">
+                            <img class="image1" src="{{product.image}}" height="300px" width="100%" alt="">
+                            <img class="image2" src="{{product.image}}" height=" 300px " width="100% " alt=" ">
+                        </div>
+                        <div class="text">
+                            <!-- <div class="product-name">
+                                <h2>{{product.name}}</h2>
+                            </div> -->
+                            <div class="product-price">
+                                <h6>{{product.price|currency}}</h6>
+                            </div>
+                        </div>
+                        <div class="add-to-card">
+                            <button class="btn-add">Add To Card</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-5">
                     <div class="col-lg-4 m-auto">
                         <nav aria-label="Page navigation example">
                             <ul class="pagination">
