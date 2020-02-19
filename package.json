@@ -10,6 +10,7 @@
         "e2e": "ng e2e",
         "deploy": "ng build --prod && firebase deploy",
         "serve": "node serve-script",
+        "start:prod": "node dist/server-app/main",
         "compile:server": "webpack --config webpack.server.config.js --progress --colors",
         "serve:ssr": "node dist/server",
         "build:ssr": "npm run build:client-and-server-bundles && npm run compile:server",
